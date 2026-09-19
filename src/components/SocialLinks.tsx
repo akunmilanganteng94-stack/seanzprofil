@@ -7,7 +7,8 @@ import {
   ExternalLink, 
   Sparkles,
   Zap,
-  Music2
+  Music2,
+  Users
 } from 'lucide-react';
 
 export const SocialLinks: React.FC = () => {
@@ -37,6 +38,19 @@ export const SocialLinks: React.FC = () => {
       borderHover: 'hover:border-[#00A8FF]/60',
       glowClass: 'hover:shadow-[0_10px_30px_-5px_rgba(0,168,255,0.4)]',
       bgIcon: 'bg-[#00A8FF]/15 text-[#00A8FF]',
+    },
+    {
+      id: 'whatsapp-group',
+      title: 'Grup WhatsApp SEANZ',
+      username: 'Official Group • Komunitas & Silaturahmi',
+      url: 'https://chat.whatsapp.com/KKVc4iRVzNxD8mddsJRX30?mode=gi_t',
+      icon: Users,
+      tag: 'OFFICIAL COMMUNITY',
+      accentColor: '#0066FF',
+      gradient: 'from-[#0066FF] to-[#00A8FF]',
+      borderHover: 'hover:border-[#0066FF]/60',
+      glowClass: 'hover:shadow-[0_10px_30px_-5px_rgba(0,102,255,0.45)]',
+      bgIcon: 'bg-[#0066FF]/15 text-[#00A8FF]',
     },
     {
       id: 'instagram',
