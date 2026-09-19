@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-deep-navy: #050816;
+    --color-blue: #0066FF;
+    --color-electric-blue: #00A8FF;
+    --color-red: #FF1744;
+    --color-crimson: #D50032;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    background-color: #050816;
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+}
+
+.font-orbitron {
+  font-family: 'Orbitron', monospace, sans-serif;
+}
+
+.font-space {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-jakarta {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0066FF, #FF1744);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00A8FF, #D50032);
+}
+
+/* Futuristic Glows & Shadows */
+.glow-blue {
+  box-shadow: 0 0 25px -5px rgba(0, 168, 255, 0.4);
+}
+
+.glow-red {
+  box-shadow: 0 0 25px -5px rgba(255, 23, 68, 0.4);
+}
+
+.glow-dual {
+  box-shadow: 0 0 35px -5px rgba(0, 102, 255, 0.35), 0 0 20px -2px rgba(255, 23, 68, 0.25);
+}
+
+.text-glow-dual {
+  text-shadow: 0 0 20px rgba(0, 168, 255, 0.6), 0 0 35px rgba(255, 23, 68, 0.4);
+}
+
+.text-glow-blue {
+  text-shadow: 0 0 16px rgba(0, 168, 255, 0.7);
+}
+
+.text-glow-red {
+  text-shadow: 0 0 16px rgba(255, 23, 68, 0.7);
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(8, 14, 38, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  background: rgba(12, 20, 52, 0.8);
+  border-color: rgba(0, 168, 255, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(0, 102, 255, 0.3), 0 0 20px -5px rgba(255, 23, 68, 0.2);
+}
+
+/* Electric Light Sweep Animation */
+@keyframes electricSweep {
+  0% {
+    transform: translateX(-150%) skewX(-25deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(250%) skewX(-25deg);
+    opacity: 0;
+  }
+}
+
+.electric-sweep {
+  position: relative;
+  overflow: hidden;
+}
+
+.electric-sweep::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 168, 255, 0.2) 25%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 23, 68, 0.3) 75%,
+    transparent 100%
+  );
+  animation: electricSweep 4.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Glitch Effect */
+@keyframes glitchAnim {
+  0%, 90%, 100% {
+    transform: translate(0);
+    filter: drop-shadow(0 0 0 transparent);
+  }
+  92% {
+    transform: translate(-2px, 1px);
+    filter: drop-shadow(2px 0 #00A8FF) drop-shadow(-2px 0 #FF1744);
+  }
+  94% {
+    transform: translate(2px, -1px);
+    filter: drop-shadow(-2px 0 #00A8FF) drop-shadow(2px 0 #FF1744);
+  }
+  96% {
+    transform: translate(-1px, -1px);
+    filter: drop-shadow(1px 0 #00A8FF);
+  }
+  98% {
+    transform: translate(1px, 2px);
+    filter: drop-shadow(-1px 0 #FF1744);
+  }
+}
+
+.glitch-subtle {
+  animation: glitchAnim 5s infinite;
+}
+
+/* Animated Gradient Border */
+@keyframes borderRotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-border-blue-red {
+  position: relative;
+  border-radius: 1.25rem;
+  background: linear-gradient(60deg, #0066FF, #00A8FF, #FF1744, #D50032, #0066FF);
+  background-size: 300% 300%;
+  animation: borderRotate 6s ease infinite;
+  padding: 1.5px;
+}
+
+.gradient-border-inner {
+  background: #050816;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+}
+
+/* Floating animation */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+.animate-float {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
